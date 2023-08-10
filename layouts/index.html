@@ -1,0 +1,98 @@
+{{ define "main" }}
+
+<style>
+
+
+  #index-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px 10px;
+    grid-gap: 10px;
+    display: grid;
+  }
+
+
+  @media (max-width: 1600px) {
+    #index-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    #index-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    #index-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #index-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    #index-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+</style>
+
+    {{ $pages := .Site.RegularPages }} {{ $paginator := .Paginate ($pages) }}
+
+        <div id="index-grid">
+
+      {{ range (where .Site.RegularPages "Type" "in" "plants") }}
+     
+      <div href="{{ .RelPermalink }}" class="post-item m-bot-10 {{ if .Draft }}is-draft{{ end }}" >
+        {{ $title := .Title }} {{ $summary := .Summary }} {{ $image :=.Params.featured_image }} 
+        <a href="{{ .RelPermalink }}">
+          <img class="lazyload" src="/images/placeholder.png" data-src="{{$image}}">
+        </a>
+        <div class="list-posts-item-meta">
+          <h2 class="title m-bot-0">{{ $title }}</h2>
+          <p class="m-bot-0 summary text-small">{{ $summary }}</p>
+          <p class="text-mono m-bot-0" datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</p>
+          <p class="text-mono">{{ partial "tags.html" . }}</p>
+        
+          <p class="text-mono"> {{ .Content  | countwords }} words</p>
+           
+       
+	</div>
+</div>
+        {{ end }}
+
+
+      </div>
+
+
+      <script src='{{ "/js/lazysizes.min.js" | relURL }}'></script>
+
+      <button onclick="toggleDrafts()" id="button-toggle-drafts">toggle drafts</button>
+
+      <script>
+        function toggleDrafts() {
+          var indexGrid = document.getElementById("index-grid");
+          indexGrid.classList.toggle("hide-drafts");
+        }
+
+      </script>
+<script>
+
+// Lazysizes
+window.lazySizesConfig = {
+  addClasses: true,
+};
+
+
+
+
+</script>
+    {{ end }}
+  

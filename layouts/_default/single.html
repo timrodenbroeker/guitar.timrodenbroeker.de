@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+
+
+{{ $image :=
+  .Params.featured_image }}
+
+  <main style="background: white;">
+  <header>
+    <div class="wrap-wide" style="padding-top: 100px; margin-bottom: 2vw;">
+      <h1 style="line-height: 100%; font-size: calc(16px + 8vw); color: #551a8b;">
+        {{ .Title }}
+      </h1>
+      <p class="text-mono p-top-15 text-center" datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</p>
+      <div class="text-center">
+        {{ partial "tags.html" . }}
+      </div>
+    </div>
+  </header>
+
+    <section id="single" class="p-bot-50">
+      <div class="wrap">
+        <div class="content" style="padding-top:75px;padding-bottom:75px;">
+          {{ .Content }}
+        </div>
+
+      </div>
+      
+    </div> 
+</section>
+</main>
+
+<aside id="toc">
+  <div id="toc-list">
+    {{ .TableOfContents }}
+  </div>
+</aside>
+
+<script src='{{ "/js/medium-zoom.min.js" | relURL }}'></script>
+
+<script>
+  mediumZoom(document.querySelectorAll('#single img.zoom'))
+</script>
+
+{{ end }}
+
+
