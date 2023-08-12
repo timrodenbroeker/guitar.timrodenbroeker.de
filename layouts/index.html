@@ -4,12 +4,15 @@
 
 
   #index-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 50px 10px;
     grid-gap: 10px;
     display: grid;
   }
 
+  .post-item {
+    aspect-ratio: 1/1;
+  }
 
   @media (max-width: 1600px) {
     #index-grid {
@@ -40,6 +43,16 @@
       grid-template-columns: 1fr;
     }
   }
+
+  .list-posts-item-meta {
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100%;  
+  }
   
 
 </style>
@@ -48,41 +61,19 @@
 
         <div id="index-grid">
 
-      {{ range (where .Site.RegularPages "Type" "in" "plants") }}
+      {{ range (where .Site.RegularPages "Type" "in" "songs") }}
      
-      <div href="{{ .RelPermalink }}" class="post-item m-bot-10 {{ if .Draft }}is-draft{{ end }}" >
+      <a href="{{ .RelPermalink }}" class="post-item m-bot-10" style="position: relative; background: {{.Params.Bg}};">
         {{ $title := .Title }} {{ $summary := .Summary }} {{ $image :=.Params.featured_image }} 
-        <a href="{{ .RelPermalink }}">
-          <img class="lazyload" src="/images/placeholder.png" data-src="{{$image}}">
-        </a>
-        <div class="list-posts-item-meta">
-          <h2 class="title m-bot-0">{{ $title }}</h2>
-          <p class="m-bot-0 summary text-small">{{ $summary }}</p>
-          <p class="text-mono m-bot-0" datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</p>
-          <p class="text-mono">{{ partial "tags.html" . }}</p>
-        
-          <p class="text-mono"> {{ .Content  | countwords }} words</p>
-           
-       
-	</div>
-</div>
-        {{ end }}
 
-
+        <div class="list-posts-item-meta" style="">
+        <h2 style="font-size: 30px; font-weight: normal; text-align: center; color: {{.Params.Fg}};" class="m-bot-0">{{ $title }}</h2>
       </div>
-
-
+    </a>
+        {{ end }}
+      </div>
       <script src='{{ "/js/lazysizes.min.js" | relURL }}'></script>
 
-      <button onclick="toggleDrafts()" id="button-toggle-drafts">toggle drafts</button>
-
-      <script>
-        function toggleDrafts() {
-          var indexGrid = document.getElementById("index-grid");
-          indexGrid.classList.toggle("hide-drafts");
-        }
-
-      </script>
 <script>
 
 // Lazysizes

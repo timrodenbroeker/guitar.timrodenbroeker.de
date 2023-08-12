@@ -62,7 +62,7 @@
   }
   
   p a {
-    color: green;
+    color: rgb(219, 24, 24);
   }
   
   body,
@@ -78,7 +78,7 @@
   }
   
   a:hover {
-    color: green;
+    color: rgb(219, 24, 24);
   }
   
   /* markdown content styles */
@@ -258,7 +258,7 @@
   }
   
   #list-page .title a:hover {
-    color: green;
+    color: rgb(219, 24, 24);
   }
   
   #list-page .date {
@@ -328,7 +328,7 @@
     margin-right: 3px;
   }
   #single .tags a:hover {
-    color: green;
+    color: rgb(219, 24, 24);
   }
   
   #archive {
@@ -357,7 +357,7 @@
     text-decoration: none;
   }
   #archive .group .value .title a:hover {
-    color: green;
+    color: rgb(219, 24, 24);
   }
   #archive .group .value .tags {
     display: inline;
@@ -370,7 +370,7 @@
     margin-right: 3px;
   }
   #archive .group .value .tags a:hover {
-    color: green;
+    color: rgb(219, 24, 24);
   }
   
   h1,
@@ -493,7 +493,7 @@
   .btn {
     display: inline-block;
     background: var(--bg);
-    color: green !important;
+    color: rgb(219, 24, 24) !important;
     padding: 7px 10px;
   }
   
@@ -649,6 +649,9 @@
     margin-bottom: 30px;
   }
   
+  video {
+    width: 100%;
+  }
   figure {
     padding: 0;
     margin: 50px 0;
@@ -807,7 +810,7 @@
     padding-left:10px;
     font-weight: bold;
     display: block;
-    color: green;
+    color: rgb(219, 24, 24);
   }
   
   #main .logo {

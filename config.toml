@@ -1,6 +1,6 @@
-baseURL = 'https://garden.timrodenbroeker.de'
+baseURL = 'https://guitar.timrodenbroeker.de'
 languageCode = 'en-us'
-title = 'garden.timrodenbroeker.de'
+title = 'guitar.timrodenbroeker.de'
 buildDrafts = false
 paginate = 100
 summaryLength = 10

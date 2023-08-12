@@ -56,7 +56,7 @@ img {
 }
 
 p a {
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 body,
@@ -70,7 +70,7 @@ a {
 }
 
 a:hover {
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 /* markdown content styles */
@@ -246,7 +246,7 @@ main {
 }
 
 #list-page .title a:hover {
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 #list-page .date {
@@ -313,7 +313,7 @@ main {
 }
 
 #single .tags a:hover {
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 #archive {
@@ -346,7 +346,7 @@ main {
 }
 
 #archive .group .value .title a:hover {
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 #archive .group .value .tags {
@@ -361,7 +361,7 @@ main {
 }
 
 #archive .group .value .tags a:hover {
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 h1,
@@ -473,7 +473,7 @@ p {
 .btn {
   display: inline-block;
   background: var(--bg);
-  color: green !important;
+  color: rgb(219, 24, 24) !important;
   padding: 7px 10px;
 }
 
@@ -630,6 +630,10 @@ hr {
   margin-bottom: 30px;
 }
 
+video {
+  width: 100%;
+}
+
 figure {
   padding: 0;
   margin: 50px 0;
@@ -768,7 +772,7 @@ nav a {
   padding-left: 10px;
   font-weight: bold;
   display: block;
-  color: green;
+  color: rgb(219, 24, 24);
 }
 
 #main {
