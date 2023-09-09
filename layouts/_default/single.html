@@ -5,17 +5,29 @@
 {{ $image :=
   .Params.featured_image }}
 
-  <main style="background: white;">
-  <header style="margin-top: 100px;">
-    <div class="wrap-wide">
-      <h1 style="text-align: left; font-size: calc(16px + 3vw);">
+  {{ $video :=
+    .Params.featured_video }}
+
+  <main>
+
+    <div style="background: white;">
+  <header style="padding-top: 100px; margin-bottom: 50px;" class="wrap-wide">
+      <h1 style="font-size: calc(16px + 6vw);">
         {{ .Title }}
       </h1>
-    </div>
   </header>
+
+  
 
     <section id="single" class="p-bot-50">
       <div class="wrap">
+
+        {{ if .Param "featured_video" }}
+          <video src="{{$video}}" controls></video>
+        {{ end }}
+
+        
+
         <div class="content" style="padding-top:75px;padding-bottom:75px;">
           {{ .Content }}
         </div>
@@ -24,6 +36,7 @@
       
     </div> 
 </section>
+</div>
 </main>
 
 <script src='{{ "/js/medium-zoom.min.js" | relURL }}'></script>

@@ -1,0 +1,63 @@
+<style>
+
+  #ideas-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 50px 10px;
+    grid-gap: 10px;
+    display: grid;
+  }
+
+
+  @media (max-width: 1600px) {
+    #ideas-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    #ideas-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    #ideas-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #ideas-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    #ideas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  
+
+</style>
+
+    {{ $pages := .Site.RegularPages }} {{ $paginator := .Paginate ($pages) }}
+
+        <div id="ideas-grid">
+
+      {{ range (where .Site.RegularPages "Type" "in" "ideas") }}
+     
+      <div class="post-item m-bot-10">
+
+
+        {{ $title := .Title }} {{ $summary := .Summary }} {{ $image :=.Params.featured_image }}  {{ $video :=.Params.featured_video }} 
+
+        <div class="list-posts-item-meta">
+          <video src="{{$video}}" controls></video>
+        <a href="{{ .RelPermalink }}"  style="font-size: 25px; font-weight: normal;">{{ $title }}</a>
+      </div>
+</div>
+        {{ end }}
+      </div>
+  

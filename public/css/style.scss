@@ -62,7 +62,7 @@
   }
   
   p a {
-    color: blue;
+    color: rgb(219, 24, 24);
   }
   
   body,
@@ -78,7 +78,7 @@
   }
   
   a:hover {
-    color: #0000ff;
+    color: rgb(219, 24, 24);
   }
   
   /* markdown content styles */
@@ -258,7 +258,7 @@
   }
   
   #list-page .title a:hover {
-    color: #0000ff;
+    color: rgb(219, 24, 24);
   }
   
   #list-page .date {
@@ -313,7 +313,8 @@
   .tags a {
     text-transform: lowercase;
     color: #aaaaaa;
- font-size: var(--text-small);;
+    font-size: var(--text-small);;
+    
   }
   
   #single .tags {
@@ -327,7 +328,7 @@
     margin-right: 3px;
   }
   #single .tags a:hover {
-    color: #0000ff;
+    color: rgb(219, 24, 24);
   }
   
   #archive {
@@ -356,7 +357,7 @@
     text-decoration: none;
   }
   #archive .group .value .title a:hover {
-    color: #0000ff;
+    color: rgb(219, 24, 24);
   }
   #archive .group .value .tags {
     display: inline;
@@ -369,7 +370,7 @@
     margin-right: 3px;
   }
   #archive .group .value .tags a:hover {
-    color: #0000ff;
+    color: rgb(219, 24, 24);
   }
   
   h1,
@@ -492,7 +493,7 @@
   .btn {
     display: inline-block;
     background: var(--bg);
-    color: #0000ff !important;
+    color: rgb(219, 24, 24) !important;
     padding: 7px 10px;
   }
   
@@ -648,6 +649,9 @@
     margin-bottom: 30px;
   }
   
+  video {
+    width: 100%;
+  }
   figure {
     padding: 0;
     margin: 50px 0;
@@ -723,46 +727,14 @@
   }
   
   #index-grid {
-    padding: 50px 10px;
-    grid-gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   
+    
     
     h2 {
       font-size: var(--text-normal);
     }
   }
 
-  @media (max-width: 1600px) {
-    #index-grid {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 1400px) {
-    #index-grid {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    #index-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #index-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    #index-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
   .summary {
     max-height: 50px;
     overflow: hidden;
@@ -812,7 +784,7 @@
     top: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1px;
     border-bottom: 1px solid black;
 
@@ -838,7 +810,7 @@
     padding-left:10px;
     font-weight: bold;
     display: block;
-    color: blue;
+    color: rgb(219, 24, 24);
   }
   
   #main .logo {
@@ -917,9 +889,14 @@
   margin-bottom: 0px !important;
 }
 #tags {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px;
   .tag {
     background: #f1f1f1;
-    padding: 2px 5px;
+    padding: 5px 10px;
+    border-radius: 30px;
     margin: 3px;
     display: block;
     color: black;
@@ -935,4 +912,7 @@
   text-align: center;
   font-size: 13px;
   padding-top: 10px;
+}
+.text-large {
+  font-size: 40px;
 }

@@ -1,0 +1,65 @@
+
+<style>
+
+
+    #songs-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 50px 10px;
+      grid-gap: 10px;
+      display: grid;
+    }
+
+  
+    @media (max-width: 1600px) {
+      #songs-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  
+    @media (max-width: 1400px) {
+      #songs-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  
+    @media (max-width: 1000px) {
+      #songs-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #songs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 500px) {
+      #songs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    
+  
+  </style>
+  
+      {{ $pages := .Site.RegularPages }} {{ $paginator := .Paginate ($pages) }}
+  
+          <div id="songs-grid">
+  
+        {{ range (where .Site.RegularPages "Type" "in" "songs") }}
+       
+        <div class="post-item m-bot-10">
+  
+  
+          {{ $title := .Title }} {{ $summary := .Summary }} {{ $image :=.Params.featured_image }}  {{ $video :=.Params.featured_video }} 
+  
+          <div class="list-posts-item-meta">
+            <video src="{{$video}}" controls></video>
+          <a href="{{ .RelPermalink }}"  style="font-size: 25px; font-weight: normal;">{{ $title }}</a>
+        </div>
+  </div>
+          {{ end }}
+        </div>
+    

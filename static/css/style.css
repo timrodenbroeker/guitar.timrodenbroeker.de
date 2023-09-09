@@ -1,5 +1,5 @@
 :root {
-  --bg: rgb(255,255,255);
+  --bg: #dddddd;
   --fg: rgb(0,0,0);
   --text-xlarge: 3rem;
   --text-large: 2rem;
@@ -423,10 +423,6 @@ time {
   /* filter: grayscale(100%); */
 }
 
-.list-page-item-meta {
-  padding: 10px 10px;
-}
-
 .badge-draft {
   position: absolute;
   top: 0;
@@ -517,11 +513,6 @@ p {
   color: var(--bg);
   font-size: calc(16px + 4vw);
   width: 100%;
-  text-align: center;
-}
-
-h1 {
-  text-align: center;
 }
 
 #header input {
@@ -555,10 +546,7 @@ h1 {
 
 .post-item {
   text-decoration: none;
-}
-
-.list-posts-item-meta {
-  padding: 10px;
+  background: white;
 }
 
 ::-moz-placeholder {
@@ -752,7 +740,6 @@ figure img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1px;
-  border-bottom: 1px solid black;
 }
 #main #search-input {
   border: none;
@@ -773,10 +760,6 @@ nav a {
   font-weight: bold;
   display: block;
   color: rgb(219, 24, 24);
-}
-
-#main {
-  background: var(--bg);
 }
 
 @media (max-width: 550px) {
@@ -868,4 +851,11 @@ aside#toc:hover #toc-list {
 
 .text-large {
   font-size: 40px;
+}
+
+.list-posts-item-meta a {
+  text-align: center;
+  padding: 10px;
+  display: block;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

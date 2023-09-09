@@ -3,7 +3,7 @@
 // ==================
 
 :root {
-    --bg: rgb(255,255,255);
+    --bg: #dddddd;
     --fg: rgb(0,0,0);
     --text-xlarge: 3rem;
     --text-large: 2rem;
@@ -441,7 +441,7 @@
   }
   
   .list-page-item-meta {
-    padding: 10px 10px;
+
   }
   
   .badge-draft {
@@ -536,12 +536,9 @@
     color: var(--bg);
     font-size: calc(16px + 4vw);
     width: 100%;
-    text-align: center;
+
   }
-  
-  h1 {
-  text-align: center;
-  }
+
   
   #header input {
     background: transparent;
@@ -574,11 +571,11 @@
   
   .post-item {
     text-decoration: none;
-  
+    background: white;
   }
   
   .list-posts-item-meta {
-    padding: 10px;
+
   }
   
   ::placeholder {
@@ -786,7 +783,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1px;
-    border-bottom: 1px solid black;
 
     #search-input {
         border: none;
@@ -818,7 +814,7 @@
   }
   
   #main {
-    background: var(--bg);
+
   }
   
   @media (max-width: 550px) {
@@ -915,4 +911,11 @@
 }
 .text-large {
   font-size: 40px;
+}
+
+.list-posts-item-meta a{
+  text-align: center;
+  padding: 10px;
+  display: block;
+  width: 100%;
 }

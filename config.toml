@@ -1,7 +1,7 @@
 baseURL = 'https://guitar.timrodenbroeker.de'
 languageCode = 'en-us'
 title = 'guitar.timrodenbroeker.de'
-buildDrafts = false
+buildDrafts = true
 paginate = 100
 summaryLength = 10
 enableGitInfo = true
