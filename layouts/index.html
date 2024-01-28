@@ -1,8 +1,37 @@
 {{ define "main" }}
 
-{{ partial "loop-songs.html" . }}
+<style>
+ #ideas-grid {
+    display: block;
+    padding-top: 30px;
+}
 
-{{ partial "loop-ideas.html" . }}
+.post-item {
+    width: 300px;
+    margin: 20px auto 50px auto;
+}
+</style>
+  
+      {{ $pages := .Site.RegularPages }} {{ $paginator := .Paginate ($pages) }}
+  
+          <div id="ideas-grid" style="background: #f1f1f1">
+  
+        {{ range (where .Site.RegularPages "Type" "in" "posts") }}
+       
+        <div class="post-item m-bot-10">
+  
+  
+          {{ $title := .Title }} {{ $summary := .Summary }} {{ $image :=.Params.featured_image }}  {{ $video :=.Params.featured_video }} 
+  
+          <div class="list-posts-item-meta">
+            <video src="{{$video}}" controls></video>
+            
+          <a style="text-align: center;" href="{{ .RelPermalink }}">{{ .Date.Format (default "1/2/2006" $.Site.Params.dateFormat) }}, {{ $title }}</a>
+        </div>
+  </div>
+          {{ end }}
+        </div>
+    
 
 {{ end }}
   
